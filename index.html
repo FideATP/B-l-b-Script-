@@ -5,23 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bælɘb Workspace</title>
   <style>
+    /* Fuente del conlang */
     @font-face {
-      font-family: 'Winding7';
+      font-family: 'Winding';
       src: url('Winding7.ttf') format('truetype');
     }
 
     body {
       margin: 0;
-      padding: 0;
       background: #fff;
-      font-family: sans-serif;
+      font-family: 'Winding', sans-serif;
       text-align: center;
-      overflow-x: hidden;
     }
 
     h1 {
       margin: 20px 0;
-      font-family: 'Winding7', sans-serif;
       font-size: 28px;
     }
 
@@ -29,86 +27,58 @@
       width: 90%;
       max-width: 600px;
       height: 150px;
-      margin: 10px auto;
+      margin: 20px auto;
       display: block;
-      font-family: 'Winding7', sans-serif;
+      font-family: 'Winding', sans-serif;
       font-size: 22px;
-      border: 2px solid #0066cc;
+      border: 2px solid #0000ff;
       border-radius: 10px;
       padding: 10px;
       resize: none;
     }
 
     .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
       margin: 15px 0;
+      flex-wrap: wrap;
     }
 
     .buttons a {
-      display: inline-block;
-      margin: 5px 10px;
-      padding: 10px 20px;
-      background: #0066cc;
-      color: #fff;
       text-decoration: none;
+      background: #007bff;
+      color: #fff;
+      padding: 10px 15px;
       border-radius: 8px;
       font-size: 16px;
+      font-family: 'Winding', sans-serif;
     }
 
     .buttons a:hover {
-      background: #0055aa;
+      background: #0056b3;
     }
 
     .page {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 20px;
+      gap: 15px;
+      margin-bottom: 30px;
     }
 
     .page img {
       width: 90%;
       max-width: 600px;
-      margin: 10px 0;
       height: auto;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-
-    /* Modal de imagen */
-    #imgModal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.9);
-    }
-
-    #imgModal img {
-      margin: auto;
-      display: block;
-      max-width: 95%;
-      max-height: 95%;
-      transform-origin: center center;
-    }
-
-    #imgModal span {
-      position: absolute;
-      top: 15px;
-      right: 35px;
-      color: #fff;
-      font-size: 40px;
-      font-weight: bold;
-      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 8px;
     }
   </style>
 </head>
 <body>
 
+  <!-- Encabezado -->
   <h1>Bælɘb</h1>
 
   <!-- Área de escritura -->
@@ -116,7 +86,7 @@
 
   <!-- Botones de descarga -->
   <div class="buttons">
-    <a href="https://play.google.com/store/apps/details?id=com.keyboard.designer" target="_blank">
+    <a href="https://play.google.com/store/apps/details?id=com.design.keyboard" target="_blank">
       Descargar Keyboard Designer
     </a>
     <a href="KeyboardBlb.json" download>
@@ -125,7 +95,7 @@
   </div>
 
   <!-- Documento en imágenes -->
-  <div class="page" id="pageContainer">
+  <div class="page">
     <img src="1.jpg" alt="Página 1">
     <img src="2.jpg" alt="Página 2">
     <img src="3.jpg" alt="Página 3">
@@ -146,37 +116,6 @@
     <img src="18.jpg" alt="Página 18">
     <img src="19.jpg" alt="Página 19">
   </div>
-
-  <!-- Modal -->
-  <div id="imgModal">
-    <span id="closeModal">&times;</span>
-    <img id="modalImg" src="">
-  </div>
-
-  <script>
-    const modal = document.getElementById("imgModal");
-    const modalImg = document.getElementById("modalImg");
-    const closeModal = document.getElementById("closeModal");
-
-    document.querySelectorAll('.page img').forEach(img => {
-      img.addEventListener('click', () => {
-        modal.style.display = "block";
-        modalImg.src = img.src;
-      });
-    });
-
-    closeModal.onclick = () => {
-      modal.style.display = "none";
-      modalImg.src = "";
-    };
-
-    modal.onclick = (e) => {
-      if(e.target === modal) {
-        modal.style.display = "none";
-        modalImg.src = "";
-      }
-    };
-  </script>
 
 </body>
 </html>
