@@ -52,10 +52,8 @@
 </head>
 <body>
 
-  <!-- Encabezado con los símbolos reales del conlang -->
-  <h1>𐄂 𐄀 𐄁  
-𐄃 𐄄 𐄅  
-𐄆 𐄇 𐄈</h1>
+  <!-- Encabezado dinámico -->
+  <h1 id="conlangHeader"></h1>
 
   <!-- Área de escritura -->
   <textarea id="conlangText">*wjl∅ Eî:</textarea>
@@ -82,6 +80,31 @@
     <img src="18.jpg" alt="Página 18">
     <img src="19.jpg" alt="Página 19">
   </div>
+
+  <script>
+    const header = document.getElementById("conlangHeader");
+
+    fetch('KeyboardBlb.json')
+      .then(resp => resp.json())
+      .then(data => {
+        // Tomamos el primer diseño
+        const design = data.Designs[0];
+
+        // Creamos el texto del encabezado concatenando todas las teclas
+        let headerText = '';
+        for(let i=0; i<design.Rows; i++){
+          const row = design.PopK[i];
+          row.Keys.forEach(key => {
+            // Usamos la propiedad 'SyOu' que tiene el carácter real
+            headerText += String.fromCodePoint(parseInt(key.Func.SyOu, 16)) + ' ';
+          });
+          headerText += '\n';
+        }
+
+        header.textContent = headerText.trim();
+      })
+      .catch(err => console.error("Error cargando teclado:", err));
+  </script>
 
 </body>
 </html>
