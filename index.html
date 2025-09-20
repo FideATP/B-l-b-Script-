@@ -29,31 +29,39 @@
       display: block;
       font-family: 'BalebScript', sans-serif;
       font-size: 20px;
-      border: 2px solid #0000ff; /* azul */
+      border: 2px solid #0000ff;
       border-radius: 10px;
       padding: 10px;
       resize: none;
     }
 
-    .page img {
-      display: block;
+    .pages-container {
+      max-height: 80vh;
+      overflow-y: auto;
+      margin: 20px auto;
       width: 90%;
-      max-width: 600px;
-      margin: 10px auto;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+    }
+
+    .pages-container img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
-  <!-- Encabezado con símbolos reales -->
-  <h1>Bælɘb/: 𝄞 𝄢 𝄣 𝄤 𝄥 𝄦 𝄧 𝄨 𝄩</h1>
+
+  <!-- Encabezado con los símbolos reales del conlang -->
+  <h1>𐄂 𐄀 𐄁  
+𐄃 𐄄 𐄅  
+𐄆 𐄇 𐄈</h1>
 
   <!-- Área de escritura -->
   <textarea id="conlangText">*wjl∅ Eî:</textarea>
 
-  <!-- Documento en imágenes -->
-  <div class="page">
+  <!-- Contenedor de imágenes -->
+  <div class="pages-container">
     <img src="1.jpg" alt="Página 1">
     <img src="2.jpg" alt="Página 2">
     <img src="3.jpg" alt="Página 3">
@@ -74,5 +82,6 @@
     <img src="18.jpg" alt="Página 18">
     <img src="19.jpg" alt="Página 19">
   </div>
+
 </body>
 </html>
