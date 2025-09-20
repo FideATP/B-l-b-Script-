@@ -1,166 +1,105 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Conlang Workspace</title>
-<style>
-  body {
-    margin: 0;
-    background: #fff;
-    font-family: sans-serif;
-    text-align: center;
-  }
+  <meta charset="UTF-8">
+  <title>Conlang Workspace</title>
+  <style>
+    body {
+      margin: 0;
+      background: #fff;
+      font-family: sans-serif;
+      text-align: center;
+    }
 
-  @font-face {
-    font-family: 'BalebScript';
-    src: url('BalebScript.ttf') format('truetype');
-  }
+    /* Fuente de tu conlang */
+    @font-face {
+      font-family: 'BalebScript';
+      src: url('BalebScript.ttf') format('truetype');
+    }
 
-  h1 {
-    margin: 20px 0;
-    font-family: 'BalebScript', sans-serif;
-    font-size: 36px;
-  }
+    h1 {
+      margin: 20px 0;
+      font-family: 'BalebScript', sans-serif;
+      font-size: 32px;
+    }
 
-  textarea {
-    width: 90%;
-    height: 150px;
-    margin: 20px auto;
-    display: block;
-    font-family: 'BalebScript', sans-serif;
-    font-size: 20px;
-    border: 2px solid #0000ff; 
-    border-radius: 10px;
-    padding: 10px;
-    resize: none;
-  }
+    textarea {
+      width: 90%;
+      height: 150px;
+      margin: 20px auto;
+      display: block;
+      font-family: 'BalebScript', sans-serif;
+      font-size: 20px;
+      border: 2px solid #0000ff;
+      border-radius: 10px;
+      padding: 10px;
+      resize: none;
+    }
 
-  #keyboard {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+    .page img {
+      display: block;
+      width: 90%;
+      max-width: 600px;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
 
-  .row {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    flex-wrap: wrap;
-  }
+    .download-section {
+      margin: 20px;
+      font-family: sans-serif;
+    }
 
-  .key {
-    background: #ddd;
-    border: 1px solid #aaa;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-family: 'BalebScript', sans-serif;
-    font-size: 18px;
-    cursor: pointer;
-  }
+    .download-section a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 15px;
+      background: #007BFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
 
-  .key:active {
-    background: #bbb;
-  }
-
-  .page img {
-    display: block;
-    width: 90%;
-    margin: 10px auto;
-    border: none;
-  }
-
-  #pagesContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 100%;
-  }
-
-  .download-button {
-    margin: 15px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-  }
-</style>
+    .download-section a:hover {
+      background: #0056b3;
+    }
+  </style>
 </head>
 <body>
+  <!-- Encabezado con los símbolos del conlang -->
+  <h1>*wjl∅ Eî:</h1>
 
-<h1>ⱲⱭⱮ ⱯⱭⱰ</h1> <!-- Pon aquí todos los símbolos reales de tu conlang -->
+  <!-- Área de escritura -->
+  <textarea id="conlangText">*wjl∅ Eî:</textarea>
 
-<textarea id="conlangText">*wjl∅ Eî:</textarea>
+  <!-- Imágenes del documento -->
+  <div class="page">
+    <img src="1.jpg" alt="Página 1">
+    <img src="2.jpg" alt="Página 2">
+    <img src="3.jpg" alt="Página 3">
+    <img src="4.jpg" alt="Página 4">
+    <img src="5.jpg" alt="Página 5">
+    <img src="6.jpg" alt="Página 6">
+    <img src="7.jpg" alt="Página 7">
+    <img src="8.jpg" alt="Página 8">
+    <img src="9.jpg" alt="Página 9">
+    <img src="10.jpg" alt="Página 10">
+    <img src="11.jpg" alt="Página 11">
+    <img src="12.jpg" alt="Página 12">
+    <img src="13.jpg" alt="Página 13">
+    <img src="14.jpg" alt="Página 14">
+    <img src="15.jpg" alt="Página 15">
+    <img src="16.jpg" alt="Página 16">
+    <img src="17.jpg" alt="Página 17">
+    <img src="18.jpg" alt="Página 18">
+    <img src="19.jpg" alt="Página 19">
+  </div>
 
-<!-- Mini teclado -->
-<div id="keyboard"></div>
-
-<!-- Botón para descargar el archivo del teclado -->
-<button class="download-button" onclick="downloadKeyboard()">Descargar teclado</button>
-
-<!-- Documento en imágenes -->
-<div id="pagesContainer" class="page">
-  <img src="1.jpg" alt="Página 1">
-  <img src="2.jpg" alt="Página 2">
-  <img src="3.jpg" alt="Página 3">
-  <img src="4.jpg" alt="Página 4">
-  <img src="5.jpg" alt="Página 5">
-  <img src="6.jpg" alt="Página 6">
-  <img src="7.jpg" alt="Página 7">
-  <img src="8.jpg" alt="Página 8">
-  <img src="9.jpg" alt="Página 9">
-  <img src="10.jpg" alt="Página 10">
-  <img src="11.jpg" alt="Página 11">
-  <img src="12.jpg" alt="Página 12">
-  <img src="13.jpg" alt="Página 13">
-  <img src="14.jpg" alt="Página 14">
-  <img src="15.jpg" alt="Página 15">
-  <img src="16.jpg" alt="Página 16">
-  <img src="17.jpg" alt="Página 17">
-  <img src="18.jpg" alt="Página 18">
-  <img src="19.jpg" alt="Página 19">
-</div>
-
-<script>
-const textarea = document.getElementById("conlangText");
-const keyboard = document.getElementById("keyboard");
-
-// Mini teclado, con los símbolos del conlang que quieras
-const keysLayout = [
-  ['Ⱳ','Ɑ','Ɱ'],
-  ['Ɐ','Ɑ','Ɒ'],
-  ['ⱱ','ⱷ','ⱸ']
-];
-
-keysLayout.forEach(rowKeys => {
-  const rowDiv = document.createElement("div");
-  rowDiv.className = "row";
-  rowKeys.forEach(k => {
-    const btn = document.createElement("button");
-    btn.className = "key";
-    btn.textContent = k;
-    btn.onclick = () => { 
-      textarea.value += k; 
-      textarea.focus(); 
-    };
-    rowDiv.appendChild(btn);
-  });
-  keyboard.appendChild(rowDiv);
-});
-
-// Función para descargar el archivo del teclado
-function downloadKeyboard() {
-  const link = document.createElement('a');
-  link.href = 'KeyboardBlb.json'; // Asegúrate que esté en tu repo
-  link.download = 'KeyboardBlb.json';
-  link.click();
-}
-</script>
-
+  <!-- Descarga de la aplicación y del archivo del teclado -->
+  <div class="download-section">
+    <p>Para usar tu teclado con este idioma, primero descarga la aplicación y luego el archivo del teclado:</p>
+    <a href="https://play.google.com/store/apps/details?id=com.keyboarddesigner">Descargar Keyboard Designer</a>
+    <a href="KeyboardBlb.json" download>Descargar archivo del teclado</a>
+  </div>
 </body>
 </html>
