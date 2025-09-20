@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Conlang Workspace</title>
+  <title>Bælɘb Workspace</title>
   <style>
     body {
       margin: 0;
@@ -11,16 +11,15 @@
       text-align: center;
     }
 
-    /* Fuente de tu conlang */
     @font-face {
-      font-family: 'BalebScript';
-      src: url('BalebScript.ttf') format('truetype');
+      font-family: 'Winding7';
+      src: url('Winding7.tff') format('truetype');
     }
 
     h1 {
       margin: 20px 0;
-      font-family: 'BalebScript', sans-serif;
-      font-size: 32px;
+      font-family: 'Winding7', sans-serif;
+      font-size: 36px;
     }
 
     textarea {
@@ -28,7 +27,7 @@
       height: 150px;
       margin: 20px auto;
       display: block;
-      font-family: 'BalebScript', sans-serif;
+      font-family: 'Winding7', sans-serif;
       font-size: 20px;
       border: 2px solid #0000ff;
       border-radius: 10px;
@@ -38,41 +37,49 @@
 
     .page img {
       display: block;
-      width: 90%;
-      max-width: 600px;
-      margin: 20px auto;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      width: 100%;
+      margin: 10px auto;
+      border: none;
     }
 
-    .download-section {
+    .download-buttons {
       margin: 20px;
-      font-family: sans-serif;
     }
 
-    .download-section a {
+    .download-buttons a {
       display: inline-block;
       margin: 10px;
-      padding: 10px 15px;
-      background: #007BFF;
-      color: white;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
       text-decoration: none;
       border-radius: 5px;
+      font-family: sans-serif;
+      font-size: 16px;
     }
 
-    .download-section a:hover {
-      background: #0056b3;
+    .download-buttons a:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
-  <!-- Encabezado con los símbolos del conlang -->
-  <h1>*wjl∅ Eî:</h1>
+  <h1>Bælɘb</h1>
 
-  <!-- Área de escritura -->
+  <!-- Área de escritura con los caracteres iniciales -->
   <textarea id="conlangText">*wjl∅ Eî:</textarea>
 
-  <!-- Imágenes del documento -->
+  <!-- Botones para descarga -->
+  <div class="download-buttons">
+    <a href="https://play.google.com/store/apps/details?id=com.example.keyboarddesigner" target="_blank">
+      Descargar la aplicación Keyboard Designer
+    </a>
+    <a href="KeyboardBlb.json" download>
+      Descargar archivo del teclado
+    </a>
+  </div>
+
+  <!-- Documento en imágenes -->
   <div class="page">
     <img src="1.jpg" alt="Página 1">
     <img src="2.jpg" alt="Página 2">
@@ -93,13 +100,6 @@
     <img src="17.jpg" alt="Página 17">
     <img src="18.jpg" alt="Página 18">
     <img src="19.jpg" alt="Página 19">
-  </div>
-
-  <!-- Descarga de la aplicación y del archivo del teclado -->
-  <div class="download-section">
-    <p>Para usar tu teclado con este idioma, primero descarga la aplicación y luego el archivo del teclado:</p>
-    <a href="https://play.google.com/store/apps/details?id=com.keyboarddesigner">Descargar Keyboard Designer</a>
-    <a href="KeyboardBlb.json" download>Descargar archivo del teclado</a>
   </div>
 </body>
 </html>
