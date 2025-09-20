@@ -19,7 +19,7 @@
     h1 {
       margin: 20px 0;
       font-family: 'BalebScript', sans-serif;
-      font-size: 28px;
+      font-size: 24px;
     }
 
     textarea {
@@ -36,10 +36,9 @@
     }
 
     .pages-container {
-      max-height: 80vh;
-      overflow-y: auto;
-      margin: 20px auto;
-      width: 90%;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     .pages-container img {
@@ -48,17 +47,28 @@
       height: auto;
       margin-bottom: 10px;
     }
+
+    p.download {
+      margin: 20px;
+      font-size: 18px;
+    }
+
+    a.download-link {
+      text-decoration: none;
+      color: #0000ff;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Encabezado dinámico -->
-  <h1 id="conlangHeader"></h1>
+  <!-- Encabezado fijo con los símbolos del conlang -->
+  <h1>*wjl∅ Eî: ɸul ɸem ɸon</h1>
 
   <!-- Área de escritura -->
   <textarea id="conlangText">*wjl∅ Eî:</textarea>
 
-  <!-- Contenedor de imágenes -->
+  <!-- Documento en imágenes -->
   <div class="pages-container">
     <img src="1.jpg" alt="Página 1">
     <img src="2.jpg" alt="Página 2">
@@ -81,30 +91,11 @@
     <img src="19.jpg" alt="Página 19">
   </div>
 
-  <script>
-    const header = document.getElementById("conlangHeader");
-
-    fetch('KeyboardBlb.json')
-      .then(resp => resp.json())
-      .then(data => {
-        // Tomamos el primer diseño
-        const design = data.Designs[0];
-
-        // Creamos el texto del encabezado concatenando todas las teclas
-        let headerText = '';
-        for(let i=0; i<design.Rows; i++){
-          const row = design.PopK[i];
-          row.Keys.forEach(key => {
-            // Usamos la propiedad 'SyOu' que tiene el carácter real
-            headerText += String.fromCodePoint(parseInt(key.Func.SyOu, 16)) + ' ';
-          });
-          headerText += '\n';
-        }
-
-        header.textContent = headerText.trim();
-      })
-      .catch(err => console.error("Error cargando teclado:", err));
-  </script>
+  <!-- Descarga del teclado -->
+  <p class="download">
+    Descarga el archivo del teclado: 
+    <a class="download-link" href="KeyboardBlb.json" download="KeyboardBlb.json">📥 Descargar teclado</a>
+  </p>
 
 </body>
 </html>
