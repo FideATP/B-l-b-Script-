@@ -1,125 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bælɘb Workspace</title>
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background: #fff;
-    text-align: center;
-  }
+  <meta charset="UTF-8">
+  <title>Bælɘb Workspace</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #000;
+      text-align: center;
+    }
 
-  h1 {
-    margin: 20px 0;
-    font-size: 24px;
-  }
+    h1 {
+      margin: 20px 0;
+      font-size: 24px;
+    }
 
-  @font-face {
-    font-family: 'Winding';
-    src: url('Winding7.tff') format('truetype');
-  }
+    /* Fuente del Conlang */
+    @font-face {
+      font-family: 'BConlang';
+      src: url('Winding7.tff') format('truetype');
+    }
 
-  textarea {
-    width: 90%;
-    max-width: 500px;
-    height: 150px;
-    margin: 20px auto;
-    display: block;
-    font-family: 'Winding', sans-serif;
-    font-size: 20px;
-    border: 2px solid #0000ff;
-    border-radius: 10px;
-    padding: 10px;
-    resize: none;
-  }
+    textarea {
+      width: 90%;
+      max-width: 600px;
+      height: 150px;
+      margin: 10px auto 20px auto;
+      display: block;
+      font-family: 'BConlang', sans-serif;
+      font-size: 24px;
+      border: 2px solid #0000ff;
+      border-radius: 12px;
+      padding: 10px;
+      resize: none;
+    }
 
-  .buttons {
-    margin: 10px auto 20px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
+    .buttons {
+      margin: 10px 0 20px 0;
+    }
 
-  .buttons a {
-    display: inline-block;
-    background: #007BFF;
-    color: #fff;
-    text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 5px;
-    font-size: 14px;
-    font-family: sans-serif;
-  }
+    .buttons button {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      padding: 8px 12px;
+      margin: 0 5px;
+      border-radius: 6px;
+      border: 1px solid #555;
+      background: #eee;
+      cursor: pointer;
+    }
 
-  .buttons a:hover {
-    background: #0056b3;
-  }
+    .buttons button:active {
+      background: #ccc;
+    }
 
-  .carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 10px;
-    padding: 10px;
-  }
+    .page img {
+      width: 95%;
+      max-width: 700px;
+      margin: 20px auto;
+      display: block;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
 
-  .carousel img {
-    flex: 0 0 auto;
-    width: 80%;
-    max-width: 500px;
-    scroll-snap-align: start;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    object-fit: contain;
-  }
+    /* Para que se vea bien en móviles */
+    @media screen and (max-width: 600px) {
+      textarea {
+        font-size: 20px;
+        height: 120px;
+      }
 
-  /* Scrollbar oculto para móvil */
-  .carousel::-webkit-scrollbar {
-    display: none;
-  }
-</style>
+      h1 {
+        font-size: 20px;
+      }
+
+      .buttons button {
+        font-size: 14px;
+        padding: 6px 10px;
+      }
+
+      .page img {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<h1>Bælɘb</h1>
+  <h1>Bælɘb</h1>
 
-<textarea id="conlangText">*wjl∅ Eî:</textarea>
+  <textarea id="conlangText">*wjl∅ Eî:</textarea>
 
-<div class="buttons">
-  <a href="https://play.google.com/store/apps/details?id=com.actual.keyboarddesigner" target="_blank">
-    Download Keyboard Designer
-  </a>
-  <a href="KeyboardBlb.json" download>
-    Download Keyboard File
-  </a>
-</div>
+  <div class="buttons">
+    <button onclick="window.open('https://play.google.com/store/apps/details?id=com.kbdesigner', '_blank')">
+      Download Keyboard Designer
+    </button>
+    <button onclick="window.open('KeyboardBlb.json', '_blank')">
+      Download Keyboard File
+    </button>
+  </div>
 
-<div class="carousel">
-  <img src="1.jpg" alt="Page 1">
-  <img src="2.jpg" alt="Page 2">
-  <img src="3.jpg" alt="Page 3">
-  <img src="4.jpg" alt="Page 4">
-  <img src="5.jpg" alt="Page 5">
-  <img src="6.jpg" alt="Page 6">
-  <img src="7.jpg" alt="Page 7">
-  <img src="8.jpg" alt="Page 8">
-  <img src="9.jpg" alt="Page 9">
-  <img src="10.jpg" alt="Page 10">
-  <img src="11.jpg" alt="Page 11">
-  <img src="12.jpg" alt="Page 12">
-  <img src="13.jpg" alt="Page 13">
-  <img src="14.jpg" alt="Page 14">
-  <img src="15.jpg" alt="Page 15">
-  <img src="16.jpg" alt="Page 16">
-  <img src="17.jpg" alt="Page 17">
-  <img src="18.jpg" alt="Page 18">
-  <img src="19.jpg" alt="Page 19">
-</div>
+  <div class="page">
+    <img src="1.jpg" alt="Page 1">
+    <img src="2.jpg" alt="Page 2">
+    <img src="3.jpg" alt="Page 3">
+    <img src="4.jpg" alt="Page 4">
+    <img src="5.jpg" alt="Page 5">
+    <img src="6.jpg" alt="Page 6">
+    <img src="7.jpg" alt="Page 7">
+    <img src="8.jpg" alt="Page 8">
+    <img src="9.jpg" alt="Page 9">
+    <img src="10.jpg" alt="Page 10">
+    <img src="11.jpg" alt="Page 11">
+    <img src="12.jpg" alt="Page 12">
+    <img src="13.jpg" alt="Page 13">
+    <img src="14.jpg" alt="Page 14">
+    <img src="15.jpg" alt="Page 15">
+    <img src="16.jpg" alt="Page 16">
+    <img src="17.jpg" alt="Page 17">
+    <img src="18.jpg" alt="Page 18">
+    <img src="19.jpg" alt="Page 19">
+  </div>
 
 </body>
 </html>
