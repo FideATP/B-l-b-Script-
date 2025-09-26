@@ -1,111 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Bælɘb Workspace</title>
+
   <link rel="stylesheet" href="font.css">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #fff;
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 20px 0;
-      font-size: 24px;
-    }
-
-    #instructions {
-      margin: 10px auto;
-      width: 90%;
-      font-size: 16px;
-      line-height: 1.4;
-      text-align: left;
-    }
-
-    textarea {
-      width: 90%;
-      height: 150px;
-      margin: 10px auto;
-      display: block;
-      font-family: 'Winding', sans-serif;
-      font-size: 22px;
-      border: 2px solid #0000ff;
-      border-radius: 10px;
-      padding: 10px;
-      resize: none;
-    }
-
-    #downloadButton {
-      display: inline-block;
-      margin: 10px 5px;
-      padding: 8px 12px;
-      font-size: 14px;
-      font-family: Arial, sans-serif;
-      background-color: #008CBA;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    #downloadButton:hover {
-      background-color: #006f94;
-    }
-
-    .pages {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 30px;
-    }
-
-    .pages img {
-      width: 95%;
-      max-width: 600px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="top">
+    <h1>Belov</h1>
+  </header>
 
-  <h1>Bælɘb</h1>
+  <main>
+    <section id="info" class="box">
+      <p>
+        Para usar el teclado de Bælɘb en Android: instala la app <strong>Keyboard Designer</strong> (Play Store):
+        <a id="appLink" href="https://play.google.com/store/apps/details?id=com.hne.tan.KeyboardDesigner" target="_blank" rel="noopener">Keyboard Designer (Play Store)</a>
+      </p>
+      <p>
+        Descarga el archivo del teclado (JSON) y súbelo a la app cuando la tengas instalada.
+      </p>
 
-  <div id="instructions">
-    <p>To use the Winding7 keyboard for Bælɘb, first download the app <strong>Keyboard Designer</strong> from the Play Store: <a href="https://play.google.com/store/apps/details?id=com.hne.tan.KeyboardDesigner" target="_blank">Keyboard Designer</a>.</p>
-    <p>Then, download your keyboard file below and import it in the app.</p>
-  </div>
+      <p>
+        <a id="downloadJson" class="button" href="KeyboardBlb.json" download>Download keyboard file (JSON)</a>
+      </p>
+    </section>
 
-  <a id="downloadButton" href="KeyboardBlb.json" download>Download Cable File</a>
+    <section class="box">
+      <label for="conlangText"><strong>Escribe en Bælɘb</strong></label>
+      <textarea id="conlangText" aria-label="Texto en Bælɘb" rows="5">*wjl∅ Eî:</textarea>
+    </section>
 
-  <textarea id="conlangText">*wjl∅ Eî:</textarea>
+    <!-- controles (modos) -->
+    <section id="keyboardControls" class="box hidden">
+      <div id="modeButtons" class="modes" aria-hidden="false"></div>
+      <button id="closeKeys" class="small">Cerrar teclado</button>
+    </section>
 
-  <div class="pages">
-    <img src="p1.jpg" alt="Page 1">
-    <img src="p2.jpg" alt="Page 2">
-    <img src="p3.jpg" alt="Page 3">
-    <img src="p4.jpg" alt="Page 4">
-    <img src="p5.jpg" alt="Page 5">
-    <img src="p6.jpg" alt="Page 6">
-    <img src="p7.jpg" alt="Page 7">
-    <img src="p8.jpg" alt="Page 8">
-    <img src="p9.jpg" alt="Page 9">
-    <img src="p10.jpg" alt="Page 10">
-    <img src="p11.jpg" alt="Page 11">
-    <img src="p12.jpg" alt="Page 12">
-    <img src="13.jpg" alt="Page 13">
-    <img src="p14.jpg" alt="Page 14">
-    <img src="p15.jpg" alt="Page 15">
-    <img src="p16.jpg" alt="Page 16">
-    <img src="p18.jpg" alt="Page 18">
-    <img src="p19.jpg" alt="Page 19">
-  </div>
+    <!-- botón flotante para abrir/ocultar teclado -->
+    <button id="toggleKeyboard" title="Abrir teclado" class="floating-btn">⌨</button>
 
+    <!-- contenedor del teclado (se construye dinámicamente) -->
+    <div id="keyboardContainer" class="keyboard hidden" aria-hidden="true"></div>
+
+    <!-- documento con páginas (vertical) -->
+    <section class="pages box" id="pages">
+      <img src="p1.jpg" alt="Página 1">
+      <img src="p2.jpg" alt="Página 2">
+      <img src="p3.jpg" alt="Página 3">
+      <img src="p4.jpg" alt="Página 4">
+      <img src="p5.jpg" alt="Página 5">
+      <img src="p6.jpg" alt="Página 6">
+      <img src="p7.jpg" alt="Página 7">
+      <img src="p8.jpg" alt="Página 8">
+      <img src="p9.jpg" alt="Página 9">
+      <img src="p10.jpg" alt="Página 10">
+      <img src="p11.jpg" alt="Página 11">
+      <img src="p12.jpg" alt="Página 12">
+      <img src="p13.jpg" alt="Página 13">
+      <img src="p14.jpg" alt="Página 14">
+      <img src="p15.jpg" alt="Página 15">
+      <img src="p16.jpg" alt="Página 16">
+      <img src="p18.jpg" alt="Página 18">
+      <img src="p19.jpg" alt="Página 19">
+    </section>
+
+    <section id="explain" class="box smallprint">
+      <h3>Notas rápidas</h3>
+      <ul>
+        <li>Si alguna imagen no aparece, comprueba el nombre exacto en el repo (sensible a mayúsculas).</li>
+        <li>Si actualizas `KeyboardBlb.json`, recarga la página para que el teclado use la versión nueva.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
