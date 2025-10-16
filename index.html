@@ -6,16 +6,23 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="font.css">
   <script>
+    // Descarga directa con contraseña
     function requestCode(action) {
       const code = prompt("Enter the access code:");
       if (code === "0209") {
-        if (action === 'font') {
-          window.location.href = "Winding7.ttf";
-        } else if (action === 'keyboard') {
-          window.location.href = "KeyboardBlb.json";
-        }
+        let url = '';
+        if (action === 'font') url = "Winding7.ttf";
+        else if (action === 'keyboard') url = "KeyboardBlb.json";
+
+        // Crear enlace temporal para descarga
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = url;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
       } else {
-        alert("Invalid code. Try again.");
+        alert("Código incorrecto. Intenta de nuevo.");
       }
     }
   </script>
