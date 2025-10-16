@@ -2,17 +2,43 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background: #a0f2f5; /* turquesa claro sólido */
   color: #004d4d;
   text-align: center;
+  overflow-x: hidden;
+
+  /* Fondo base turquesa */
+  background: linear-gradient(135deg, #a0f2f5, #d0fcff);
+  position: relative;
 }
 
+/* Animación de viento con letras del conlang */
+body::before {
+  content: "∅ wjl Eî ∅ wjl Eî ∅ wjl Eî ∅ wjl Eî ∅ wjl Eî";
+  font-family: 'Winding', system-ui, sans-serif;
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.08);
+  position: fixed;
+  top: -50px;
+  left: -100%;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: windFlow 25s linear infinite;
+}
+
+@keyframes windFlow {
+  0% { transform: translateX(0) translateY(0) rotate(0deg); }
+  50% { transform: translateX(120vw) translateY(10px) rotate(1deg); }
+  100% { transform: translateX(240vw) translateY(0) rotate(0deg); }
+}
+
+/* Contenedor principal */
 .container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
 }
 
+/* Encabezado */
 h1 {
   font-size: 36px;
   margin: 20px 0;
@@ -20,11 +46,13 @@ h1 {
   text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
+/* Cuadro de texto */
 textarea#conlangText {
-  width: 65%; /* más pequeño */
+  width: 65%;
   aspect-ratio: 2 / 1;
   margin: 20px auto;
   display: block;
+  font-family: 'Winding', system-ui, sans-serif;
   font-size: 22px;
   border: 2px solid #00b7c7;
   border-radius: 12px;
@@ -36,6 +64,7 @@ textarea#conlangText {
   color: #003344;
 }
 
+/* Botones */
 .buttons {
   margin: 15px 0 30px 0;
 }
@@ -43,7 +72,7 @@ textarea#conlangText {
 .btn {
   display: inline-block;
   margin: 5px 8px;
-  padding: 6px 12px; /* más pequeño */
+  padding: 6px 12px;
   font-size: 13px;
   font-family: Arial, sans-serif;
   background-color: #00b7c7;
@@ -60,6 +89,7 @@ textarea#conlangText {
   transform: translateY(-2px);
 }
 
+/* Imágenes tipo libro */
 .pages {
   display: flex;
   flex-direction: column;
