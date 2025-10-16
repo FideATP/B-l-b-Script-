@@ -1,8 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Winding', sans-serif;
-  background: linear-gradient(135deg, #a0f2f5, #8ee5e2); /* turquesa claro */
+  font-family: Arial, sans-serif;
+  background: #a0f2f5; /* turquesa claro sólido */
   color: #004d4d;
   text-align: center;
 }
@@ -16,12 +16,12 @@ body {
 h1 {
   font-size: 36px;
   margin: 20px 0;
-  color: #00b7c7;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+  color: #0a7d2a; /* verde */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
 textarea#conlangText {
-  width: 65%; /* un poco más pequeño */
+  width: 65%; /* más pequeño */
   aspect-ratio: 2 / 1;
   margin: 20px auto;
   display: block;
@@ -42,9 +42,9 @@ textarea#conlangText {
 
 .btn {
   display: inline-block;
-  margin: 5px 10px;
-  padding: 8px 14px;
-  font-size: 14px;
+  margin: 5px 8px;
+  padding: 6px 12px; /* más pequeño */
+  font-size: 13px;
   font-family: Arial, sans-serif;
   background-color: #00b7c7;
   color: white;
