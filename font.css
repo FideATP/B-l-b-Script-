@@ -6,7 +6,6 @@
   font-display: swap;
 }
 
-/* Aplica la fuente solo al textarea donde se escribe en el conlang */
 textarea#conlangText {
   font-family: 'Winding', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 20px;
