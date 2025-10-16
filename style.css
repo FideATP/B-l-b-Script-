@@ -1,19 +1,10 @@
-/* Diseño general con animación de viento y color turquesa */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Winding', sans-serif;
-  background: linear-gradient(-45deg, #8ee5e2, #b2f0ef, #a0f2f5, #7fe3e0);
-  background-size: 400% 400%;
-  animation: gradientMove 30s ease infinite;
+  background: linear-gradient(135deg, #a0f2f5, #8ee5e2); /* turquesa claro */
   color: #004d4d;
   text-align: center;
-}
-
-@keyframes gradientMove {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
 }
 
 .container {
@@ -22,7 +13,6 @@ body {
   padding: 20px;
 }
 
-/* Encabezado */
 h1 {
   font-size: 36px;
   margin: 20px 0;
@@ -30,9 +20,8 @@ h1 {
   text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
 }
 
-/* Área de texto */
 textarea#conlangText {
-  width: 86%;
+  width: 65%; /* un poco más pequeño */
   aspect-ratio: 2 / 1;
   margin: 20px auto;
   display: block;
@@ -47,7 +36,6 @@ textarea#conlangText {
   color: #003344;
 }
 
-/* Botones */
 .buttons {
   margin: 15px 0 30px 0;
 }
@@ -72,7 +60,6 @@ textarea#conlangText {
   transform: translateY(-2px);
 }
 
-/* Páginas del libro */
 .pages {
   display: flex;
   flex-direction: column;
