@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Bælɘb</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="font.css">
-
   <script>
     function requestCode(action) {
       const code = prompt("Enter the access code:");
@@ -21,100 +20,91 @@
         a.click();
         document.body.removeChild(a);
       } else {
-        alert("Incorrect code. Please try again.");
+        alert("Código incorrecto. Intenta de nuevo.");
       }
     }
 
-    function toggleInfo(event) {
-      event.stopPropagation();
-      document.getElementById("infoBox").classList.toggle("show");
+    function toggleHelp() {
+      const helpDiv = document.getElementById('helpDiv');
+      const imgDiv = document.getElementById('helpImg');
+      if (helpDiv.style.display === 'block') {
+        helpDiv.style.display = 'none';
+        imgDiv.style.display = 'none';
+      } else {
+        helpDiv.style.display = 'block';
+        imgDiv.style.display = 'block';
+      }
     }
-
-    document.addEventListener("click", () => {
-      document.getElementById("infoBox").classList.remove("show");
-    });
   </script>
 </head>
-
 <body>
-<div class="container">
+  <div class="container">
+    <h1>Bælɘb</h1>
 
-  <h1>Bælɘb</h1>
+    <textarea id="conlangText" placeholder="Eî Ixj∉:"></textarea>
 
-  <textarea id="conlangText" placeholder="Eî Ixj∉:"></textarea>
+    <div class="buttons">
+      <a class="btn" href="https://play.google.com/store/apps/details?id=de.humbergsoftware.keyboarddesigner" target="_blank">Get the App</a>
+      <button class="btn" onclick="requestCode('font')">Download Font</button>
+      <button class="btn" onclick="requestCode('keyboard')">Download Keyboard</button>
+      <button class="btn" onclick="toggleHelp()">!</button>
+    </div>
 
-  <!-- BOTÓN INFO -->
-  <div class="info-trigger">
-    <button class="info-btn" onclick="toggleInfo(event)">!</button>
-
-    <div id="infoBox" class="info-box">
-
-      <!-- TEXTO EN INGLÉS -->
-      <p class="info-en">
-        To write accurately and assertively in the input box above, you must install
-        the Keyboard Designer app, download the Bælɘb keyboard using the access code,
-        and download the font to load it into the keyboard.
-        The extended version of the app costs about $2 and is required to import
-        custom keyboard models.
-        The keyboard includes four layouts: Bælɘb letters, IPA letters, standard Latin
-        letters, and symbols. Numbers always appear on top.
+    <!-- Texto de ayuda e imagen, inicialmente ocultos -->
+    <div id="helpDiv" style="display:none; margin-top:10px;">
+      <p id="helpTextEn" style="font-size:16px; color:#004d4d; text-align:center; max-width:80%; margin: 0 auto;">
+        Using Bælɘb input box correctly, follow DEM step-PL: Using the Bælɘb Input Box Correctly
+To type accurately and assertively in the Bælɘb input box above, please follow these steps:
+Install Keyboard Designer from Google Play.
+Download the Bælɘb keyboard using the access code (ask to Fidel)
+Download the Bælɘb font and load it into the keyboard.
+Note: The app’s extended version costs about $2, which allows importing custom keyboards.
+The keyboard features four layouts:
+Bælɘb letters
+IPA letters
+Standard Latin letters
+Symbols
+Numbers are always displayed above.
+Following these steps ensures that you can write correctly, efficiently, and assertively in Bælɘb.
+      <p id="helpText" style="font-family:'Winding',sans-serif; font-size:20px; color:#003344; text-align:center; max-width:80%; margin:10px auto 0 auto;">
+        झdΨ ïjӘr swझҗb Ψîdl IcЂ⇒ ≈s:Ir gӘrx ∏iҪard-ऽÇgnr ≈lЪgl-p∉i,Olr tcΨl swझҗb ÇlsΨv:(ӑj °ऽl),Olr jÜvx* ऐ Îîr tcΨl.कa– Ђ UlŒ Ψoî gӘrx 2жऔr ऐ üÔx Гl ऑÜx Ç Ir Ψ swtcΨl.Ђ lΠ 4лl$c:jӘvc swझҗb,jӘvc I*c ГΛeइt,jӘvc औ|n भ jऔv* AП,jl≈c Æt ÎΠ Als.झनt ≈s EжêΠ jӘr ∃,d~x lw ΨsГ ≈lझҗb.
       </p>
+    </div>
 
-      <!-- TEXTO SIMBÓLICO (TU TEXTO) -->
-      <p class="info-blb">
-        झdΨ ïjӘr swझҗb Ψîdl IcЂ⇒ ≈s:Ir gӘrx ∏iҪard-ऽÇgnr ≈lЪgl-p∉i,Olr tcΨl swझҗb ÇlsΨv:(ӑj °ऽl),Olr jÜvx*
-        ऐ Îîr tcΨl.कa– Ђ UlŒ Ψoî gӘrx 2жऔr ऐ üÔx Гl ऑÜx Ç Ir Ψ swtcΨl.
-        Ђ lΠ 4лl$c:jӘvc swझҗb,jӘvc I*c ГΛeइt,jӘvc औ|n भ jऔv* AП,
-        jl≈c Æt ÎΠ Als.झनt ≈s EжêΠ jӘr ∃,d~x lw ΨsГ ≈lझҗb.
-      </p>
+    <div id="helpImg" style="display:none; margin-top:15px;">
+      <img src="1007.JPG" alt="Teclado Bælɘb" style="width:25%; display:block; margin:0 auto; border-radius:6px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+    </div>
 
-      <!-- IMAGEN COLLAGE -->
-      <img src="1007.JPG" alt="Bælɘb keyboard collage">
-
+    <div class="pages">
+      <img src="p1.jpg" alt="Page 1">
+      <img src="p2.jpg" alt="Page 2">
+      <img src="p3.jpg" alt="Page 3">
+      <img src="p4.jpg" alt="Page 4">
+      <img src="p5.jpg" alt="Page 5">
+      <img src="p6.jpg" alt="Page 6">
+      <img src="p7.jpg" alt="Page 7">
+      <img src="p8.jpg" alt="Page 8">
+      <img src="p9.jpg" alt="Page 9">
+      <img src="p10.jpg" alt="Page 10">
+      <img src="p11.jpg" alt="Page 11">
+      <img src="p12.jpg" alt="Page 12">
+      <img src="13.jpg" alt="Page 13">
+      <img src="p14.jpg" alt="Page 14">
+      <img src="p15.jpg" alt="Page 15">
+      <img src="p16.jpg" alt="Page 16">
+      <img src="p18.jpg" alt="Page 18">
+      <img src="p19.jpg" alt="Page 19">
+      <img src="p20.jpg" alt="Page 20">
+      <img src="p21.jpg" alt="Page 21">
+      <img src="p22.jpg" alt="Page 22">
+      <img src="p23.jpg" alt="Page 23">
+      <img src="p24.jpg" alt="Page 24">
+      <img src="p25.jpg" alt="Page 25">
+      <img src="p26.jpg" alt="Page 26">
+      <img src="p27.jpg" alt="Page 27">
+      <img src="p28.jpg" alt="Page 28">
+      <img src="p30 Office.jpg" alt="Page 29">
     </div>
   </div>
-
-  <!-- BOTONES -->
-  <div class="buttons">
-    <a class="btn" href="https://play.google.com/store/apps/details?id=de.humbergsoftware.keyboarddesigner" target="_blank">
-      Get the App
-    </a>
-    <button class="btn" onclick="requestCode('font')">Download Font</button>
-    <button class="btn" onclick="requestCode('keyboard')">Download Keyboard</button>
-  </div>
-
-  <!-- PÁGINAS -->
-  <div class="pages">
-    <img src="p1.jpg">
-    <img src="p2.jpg">
-    <img src="p3.jpg">
-    <img src="p4.jpg">
-    <img src="p5.jpg">
-    <img src="p6.jpg">
-    <img src="p7.jpg">
-    <img src="p8.jpg">
-    <img src="p9.jpg">
-    <img src="p10.jpg">
-    <img src="p11.jpg">
-    <img src="p12.jpg">
-    <img src="p13.jpg">
-    <img src="p14.jpg">
-    <img src="p15.jpg">
-    <img src="p16.jpg">
-    <img src="p18.jpg">
-    <img src="p19.jpg">
-    <img src="p20.jpg">
-    <img src="p21.jpg">
-    <img src="p22.jpg">
-    <img src="p23.jpg">
-    <img src="p24.jpg">
-    <img src="p25.jpg">
-    <img src="p26.jpg">
-    <img src="p27.jpg">
-    <img src="p28.jpg">
-    <img src="p30 Office.jpg">
-  </div>
-
-</div>
 </body>
 </html>
