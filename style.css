@@ -5,13 +5,10 @@ body {
   color: #004d4d;
   text-align: center;
   overflow-x: hidden;
-
-  /* Fondo base turquesa */
   background: linear-gradient(135deg, #a0f2f5, #d0fcff);
   position: relative;
 }
 
-/* Animación de viento con letras del conlang */
 body::before {
   content: "∅ wjl Eî ∅ wjl Eî ∅ wjl Eî ∅ wjl Eî ∅ wjl Eî";
   font-family: 'Winding', system-ui, sans-serif;
@@ -31,22 +28,19 @@ body::before {
   100% { transform: translateX(240vw) translateY(0) rotate(0deg); }
 }
 
-/* Contenedor principal */
 .container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Encabezado */
 h1 {
   font-size: 36px;
   margin: 20px 0;
-  color: #0a7d2a; /* verde */
+  color: #0a7d2a;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
-/* Cuadro de texto */
 textarea#conlangText {
   width: 65%;
   aspect-ratio: 2 / 1;
@@ -64,9 +58,8 @@ textarea#conlangText {
   color: #003344;
 }
 
-/* Botones */
 .buttons {
-  margin: 15px 0 30px 0;
+  margin: 15px 0 20px 0;
 }
 
 .btn {
@@ -89,13 +82,38 @@ textarea#conlangText {
   transform: translateY(-2px);
 }
 
-: none; /* Quita la animación de hover y escala */
+/* BLOQUE DE INSTRUCCIONES */
+.instruction-box {
+  width: 70%;
+  margin: 20px auto 40px auto;
+  padding: 14px 16px;
+  background: #ffffffdd;
+  border: 2px solid #00b7c7;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
 }
+
+.instruction-en {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.35;
+  color: #003344;
+  margin-bottom: 10px;
+}
+
+.instruction-winding {
+  font-family: 'Winding', system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #003344;
+  text-align: center;
+}
+
 .pages {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0; /* sin espacio entre imágenes */
+  gap: 0;
   margin-bottom: 50px;
 }
 
@@ -103,7 +121,7 @@ textarea#conlangText {
   width: 86%;
   border: 2px solid #00b7c7;
   border-radius: 6px;
-  margin-bottom: 0; /* elimina el espacio inferior */
+  margin-bottom: 0;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: none; /* sin efecto hover */
+  transition: none;
 }
